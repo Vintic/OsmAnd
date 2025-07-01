@@ -82,3 +82,25 @@ By following this design, the plugin uses live data to improve navigation: heavy
 * OsmAnd documentation on creating custom plugins and the context-menu *Avoid Road* feature (which marks roads as not usable for routing). This is leveraged to bypass heavy-traffic roads in route calculations.
 * Community discussions confirm that default OsmAnd traffic overlays are visual-only and do not impact navigation, hence the need for our plugin.
 * Prior research projects (e.g., GrenobleFuté 2016) have successfully extended OsmAnd with a traffic layer, parsing JSON data and drawing colored road sections, demonstrating the feasibility of this approach within OsmAnd’s plugin framework.
+
+
+
+
+The initial implementation of OsmAnd Android plugin. Here's what it does:
+
+### ✅ Implemented
+
+* Downloads traffic data from a JSON URL
+* Caches it locally for offline use
+* Draws colored markers (red/yellow/green) on the map based on traffic severity
+* Automatically loads cached data on startup
+* Allows daily/manual updates via code (UI button wiring can be added next)
+
+### 🔜 Next Step (Optional)
+
+The plugin currently does **not yet** influence routing. For that, we'll need to hook into OsmAnd's routing system and dynamically “avoid” road segments near heavy traffic points. Let me know if you want me to proceed with that part.
+
+### TO DO:
+
+* A UI button for manual refresh?
+* Hook into route planning to avoid "heavy" traffic points?
